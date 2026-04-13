@@ -9,8 +9,6 @@ draft: false
 lang: ''
 ---
 
-我现在**完全对照这篇文章（小满reactive四个API）+ Vue3 官方文档 + 真实源码**，**逐段、逐概念、超细致讲解**，不讲废话、全部是**源码级原理**，保证你彻底理解这四个 API：
-
 # 整篇文章内容：
 **reactive / shallowReactive / readonly / shallowReadonly**
 （Vue3 响应式核心的 **4 大基础 API）**
@@ -20,7 +18,7 @@ lang: ''
 
 ---
 
-# 一、前置核心原理（必须先懂）
+# 一、前置核心原理
 ## 1. Vue3 响应式的唯一底层：**ES6 Proxy（ECMAScript 2015 标准）**
 官方源码：`packages/reactivity/src/reactive.ts`
 
@@ -226,29 +224,11 @@ state.friend.name = 'zl'  // ✅ 允许修改
 
 ---
 
-# 六、源码级核心区别（最精华）
+# 六、源码级核心区别
 Vue3 源码中，**4 个API 只由 3 个维度控制**：
 
 1. **isReadonly**：是否只读
 2. **isShallow**：是否浅层
 3. **deep：true/false**：是否递归代理
-
-## 对应关系（官方真实）
-| API | 只读 | 浅层 | 深层 | 内部对象 |
-|---|:-:|:-:|:-:|---|
-| reactive | ❌ | ❌ | 深度代理 | 响应式 |
-| shallowReactive | ❌ | ✅ | 不代理 | 普通对象 |
-| readonly | ✅ | ❌ | 深度只读 | 只读 |
-| shallowReadonly | ✅ | ✅ | 不代理 | 普通对象 |
-
----
-
-# 七、官方总结
-1. **四个 API 底层都是 `createReactiveObject` + Proxy**
-2. **reactive：深度响应式，全层级代理**
-3. **shallowReactive：浅响应，仅第一层代理**
-4. **readonly：深度只读，全层级不可修改**
-5. **shallowReadonly：第一层只读，深层可修改**
-6. 全部基于 **ES6 Proxy**，无 ES5 兼容性，无法被 polyfill
 
 ---
