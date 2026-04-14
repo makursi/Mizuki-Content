@@ -4,7 +4,7 @@ published: 2026-04-08
 description: ''
 image: ''
 tags: []
-category: ''
+category: 'Vue'
 draft: false 
 lang: ''
 ---
@@ -15,7 +15,7 @@ lang: ''
 
 ---
 
-# 一、watchEffect 官方核心定义（文章完全正确）
+# 一、watchEffect 官方核心定义
 > 立即执行一次函数  
 > 内部**自动追踪响应式依赖**  
 > 依赖变化时**重新执行**
@@ -27,7 +27,7 @@ lang: ''
 
 ---
 
-# 二、文章第一段：最基础用法
+# 最基础用法
 ```js
 let message = ref('')
 let message2 = ref('')
@@ -48,7 +48,7 @@ watchEffect(() => {
 
 ---
 
-# 三、文章第二段：清除副作用（onInvalidate）
+# 清除副作用（onInvalidate）
 ```js
 watchEffect((onInvalidate) => {
   console.log(message2.value)
