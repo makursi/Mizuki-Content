@@ -1,5 +1,5 @@
 ---
-title: Fetch API
+title: FetchAPI
 published: 2026-04-22
 description:
 image: ''
