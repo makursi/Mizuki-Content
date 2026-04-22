@@ -9,9 +9,7 @@ draft: false
 lang: ''
 ---
 
-# 洋葱模型的概念
-
-## 我们将返回 Response 基本函数称为“Handler”。“Middleware”在 Handler 执行前后执行，负责处理 Request 和 Response 。它的结构类似于洋葱。
+# 我们将返回 Response 基本函数称为“Handler”。“Middleware”在 Handler 执行前后执行，负责处理 Request 和 Response 。它的结构类似于洋葱。
 ---
 
 ![Alt text](./hono/onion.png)
