@@ -1,12 +1,12 @@
 ---
 title: FetchAPI
 published: 2026-04-22
-description:
+description: ''
 image: ''
 tags: []
-category: 'Web API'
+category: 'WebAPI'
 draft: false 
-lang: 'zh'
+lang: ''
 ---
 # Fetch API
 
