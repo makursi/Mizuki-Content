@@ -1,5 +1,5 @@
 ---
-title: React的Fiber
+title: React Hooks
 published: 2026-04-30
 description: ''
 image: ''
@@ -13,42 +13,42 @@ lang: ''
 # React hooks
 
 ## 数据驱动
-[useState](react-useState.md)
+[useState](./reacthooks/useState.md)
 
-[useReducer](react-useReducer.md)
+[useReducer](./reacthooks/useReducer.md)
 
-[useImmer](react-useImmer.md)
+[useImmer](./reacthooks/useImmer.md)
 
-[useSyncExternalStore](react-useSyncExternalStore.md)
+[useSyncExternalStore](./reacthooks/useSyncExternalStore.md)
 
-[useTransition](react-useTransition.md)
+[useTransition](./reacthooks/useTransition.md)
 
-[useDeferredValue](react-useDeferredValue.md)
+[useDeferredValue](./reacthooks/useDeferredValue.md)
 
 ## 副作用
-[useEffect](react-useEffect.md)
+[useEffect](./reacthooks/useEffect.md)
 
-[useLayoutEffect](react-useLayoutEffect.md)
+[useLayoutEffect](./reacthooks/useLayoutEffect.md)
 
-[useInsertionEffect](react-useInsertionEffect.md)
+[useInsertionEffect](./reacthooks/useInsertionEffect.md)
 
 ## 状态传递
-[useRef](react-useRef.md)
+[useRef](./reacthooks/useRef.md)
 
-[useImperativeHandle](react-useImperativeHandle.md)
+[useImperativeHandle](./reacthooks/useImperativeHandle.md)
 
-[useContext](react-useContext.md)
+[useContext](./reacthooks/useContext.md)
 
 ## 状态派生
-[useMemo](react-useMemo.md)
+[useMemo](./reacthooks/useMemo.md)
 
-[useCallback](react-useCallback.md)
+[useCallback](./reacthooks/useCallback.md)
 
 ## 工具Hooks
-[useDebugValue](react-useDebugValue.md)
+[useDebugValue](./reacthooks/useDebugValue.md)
 
-[useId](react-useId.md)
+[useId](./reacthooks/useId.md)
 
 ## 其他
 
-[自定义hook](react-customHook.md)
+[自定义hook](./reacthooks/useCustom.md)
