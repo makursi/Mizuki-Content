@@ -1,5 +1,5 @@
 ---
-title: Learning Vue is really painful, but also very enjoyable~
+title: Vue学习之旅
 published: 2025-12-12
 description: 'A reflection on my long-term learning experience with Vue.'
 image: ''
