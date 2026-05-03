@@ -16,49 +16,49 @@ pinned: true
 
 ## 数据驱动
 
-<a href="/posts/reacthooks/useState.md">useState</a>
+<a href="/posts/reacthooks/useState/">useState</a>
 
-<a href="/posts/reacthooks/useReducer.md">useReducer</a>
+<a href="/posts/reacthooks/useReducer/">useReducer</a>
 
-<a href="/posts/reacthooks/useImmer.md">useImmer</a>
+<a href="/posts/reacthooks/useImmer/">useImmer</a>
 
-<a href="/posts/reacthooks/useSyncExternalStore.md">useSyncExternalStore</a>
+<a href="/posts/reacthooks/useSyncExternalStore/">useSyncExternalStore</a>
 
-<a href="/posts/reacthooks/useTransition.md">useTransition</a>
+<a href="/posts/reacthooks/useTransition/">useTransition</a>
 
-<a href="/posts/reacthooks/useDeferredValue.md">useDeferredValue</a>
+<a href="/posts/reacthooks/useDeferredValue/">useDeferredValue</a>
 
 ## 副作用
 
-<a href="/posts/reacthooks/useEffect.md">useEffect</a>
+<a href="/posts/reacthooks/useEffect/">useEffect</a>
 
-<a href="/posts/reacthooks/useLayoutEffect.md">useLayoutEffect</a>
+<a href="/posts/reacthooks/useLayoutEffect/">useLayoutEffect</a>
 
-<a href="/posts/reacthooks/useInsertionEffect.md">useInsertionEffect</a>
+<a href="/posts/reacthooks/useInsertionEffect/">useInsertionEffect</a>
 
 ## 状态传递
 
-<a href="/posts/reacthooks/useRef.md">useRef</a>
+<a href="/posts/reacthooks/useRef/">useRef</a>
 
-<a href="/posts/reacthooks/useImperativeHandle.md">useImperativeHandle</a>
+<a href="/posts/reacthooks/useImperativeHandle/">useImperativeHandle</a>
 
-<a href="/posts/reacthooks/useContext.md">useContext</a>
+<a href="/posts/reacthooks/useContext/">useContext</a>
 
 ## 状态派生
 
-<a href="/posts/reacthooks/useMemo.md">useMemo</a>
+<a href="/posts/reacthooks/useMemo/">useMemo</a>
 
-<a href="/posts/reacthooks/useCallback.md">useCallback</a>
+<a href="/posts/reacthooks/useCallback/">useCallback</a>
 
 ## 工具Hooks
 
-<a href="/posts/reacthooks/useDebugValue.md">useDebugValue</a>
+<a href="/posts/reacthooks/useDebugValue/">useDebugValue</a>
 
-<a href="/posts/reacthooks/useId.md">useId</a>
+<a href="/posts/reacthooks/useId/">useId</a>
 
 ## 其他
 
-<a href="/posts/reacthooks/useCustom.md">自定义hook</a>
+<a href="/posts/reacthooks/useCustom/">自定义hook</a>
 
 测试
 
