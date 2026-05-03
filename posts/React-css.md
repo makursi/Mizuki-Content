@@ -12,8 +12,8 @@ pinned: true
 
 ![Alt text](./react/reactcute.webp)
 
-<a href="./reactcss/cssmodules.md">css modules</a>
+<a href="/posts/cssmodules/">css modules</a>
 
-<a href="./reactcss/css-in-js.md">css-in-js</a>
+<a href="/posts/css-in-js/">css-in-js</a>
 
-<a href="./reactcss/cssatom.md">css原子化</a>
+<a href="/posts/cssatom/">css原子化</a>

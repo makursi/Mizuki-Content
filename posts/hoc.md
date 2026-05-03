@@ -8,7 +8,7 @@ category: 'React'
 draft: false 
 lang: ''
 ---
-![Alt text](../react/reactcute.webp)
+![Alt text](./react/reactcute.webp)
 
 # HOC(Higher Order Component)高阶组件的官方定义
 高阶组件（HOC）是 React 中用于复用组件逻辑的一种高级技巧。HOC 自身不是 React API 的一部分，它是一种基于 React 的组合特性而形成的设计模式。
