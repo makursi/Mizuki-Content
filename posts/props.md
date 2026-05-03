@@ -8,7 +8,7 @@ category: 'React'
 draft: false 
 lang: ''
 ---
-![Alt text](../react/reactcute.webp)
+![Alt text](./react/reactcute.webp)
 
 # 组件通信的官方定义
 在React中，组件通信指的是不同React组件之间进行数据、事件或状态交互的过程。

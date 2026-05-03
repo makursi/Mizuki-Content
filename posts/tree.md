@@ -8,8 +8,7 @@ category: 'React'
 draft: false 
 lang: ''
 ---
-![Alt text](../react/reactcute.webp)
-
+![Alt text](./react/reactcute.webp)
 # Tree组件实战教程
 ## 一、Tree组件实战项目搭建
 ### （一）目录创建

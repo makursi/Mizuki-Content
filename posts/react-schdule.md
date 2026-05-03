@@ -9,6 +9,7 @@ draft: false
 lang: ''
 ---
 
+![Alt text](./react/reactcute.webp)
 
 # 1. requestIdleCallback
 

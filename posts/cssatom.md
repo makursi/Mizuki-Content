@@ -8,7 +8,7 @@ category: 'React'
 draft: false 
 lang: ''
 ---
-![Alt text](../react/reactcute.webp)
+![Alt text](./react/reactcute.webp)
 
 # CSS原子化的官方定义
 CSS原子化（Atomic CSS）是一种CSS架构方法论，核心是将CSS样式拆解为最小粒度的、可复用的原子类，每个原子类仅负责实现单一的样式功能（如设置字体大小、颜色、边距、弹性布局属性等），通过组合这些原子类来构建页面样式，而非编写传统的大段聚合式CSS类。

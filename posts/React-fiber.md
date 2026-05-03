@@ -10,7 +10,7 @@ lang: ''
 ---
 ![Alt text](./react/reactcute.webp)
 
-[学习底层原理之前,简单了解一下React的具体工作流程](react-library.md)
+[学习底层原理之前,简单了解一下React的具体工作流程](React-library.md)
 # React Fiber
 
 ## React Fiber 是 React 16 重写的「协调引擎（Reconciler）」，本质是一套基于链表结构、可中断、可恢复、带优先级的异步渲染调度机制，用来解决旧架构同步递归渲染阻塞主线程的问题。

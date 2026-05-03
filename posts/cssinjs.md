@@ -8,7 +8,7 @@ category: 'React'
 draft: false 
 lang: ''
 ---
-![Alt text](../react/reactcute.webp)
+![Alt text](./react/reactcute.webp)
 
 # React中css-in-js的官方定义
 css-in-js是一种将CSS样式直接编写在JavaScript代码中的技术范式，在React生态中，它并非由React官方直接定义的规范，但React官方文档认可并提及这种方案是React应用中管理样式的主流方式之一。从社区与行业权威定义来看，css-in-js本质是通过JavaScript来封装样式逻辑，将样式作为组件的一部分，以JavaScript对象或模板字符串的形式声明样式，再由对应的库（如Styled Components、Emotion等）将其转换为实际的CSS样式并注入到DOM中，实现样式与组件的紧密耦合。

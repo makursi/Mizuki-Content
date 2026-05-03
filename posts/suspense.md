@@ -8,7 +8,7 @@ category: 'React'
 draft: false 
 lang: ''
 ---
-![Alt text](../react/reactcute.webp)
+![Alt text](./react/reactcute.webp)
 
 # 异步组件的官方定义
 在React中，异步组件（Async Components）是指**不会在页面初始渲染时同步加载**，而是在需要时（如组件即将被渲染、满足特定业务条件等）通过异步方式动态加载的组件。

@@ -8,7 +8,7 @@ category: 'React'
 draft: false 
 lang: ''
 ---
-![Alt text](../react/reactcute.webp)
+![Alt text](./react/reactcute.webp)
 
 # React传送组件（Portal）的官方定义
 React Portal（传送组件）是React官方提供的一种高级特性，其核心定义为：**Portal 提供了一种将子节点渲染到存在于父组件 DOM 层次结构之外的 DOM 节点的方式**。
