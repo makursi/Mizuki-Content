@@ -131,7 +131,7 @@ function UserProfile() {
 
 ## 1. 避免快照值可变导致的更新异常
 `getSnapshot` 返回的快照如果是可变对象（如普通对象/数组），React 会通过**浅比较**判断是否更新，若对象引用未变（即使内容变了），组件不会重新渲染。  
-✅ 正确做法：返回不可变值（原始类型、`Object.freeze` 冻结对象、解构新对象）：
+正确做法：返回不可变值（原始类型、`Object.freeze` 冻结对象、解构新对象）：
 ```javascript
 // 错误：返回同一个可变对象，内容变化但引用不变，组件不更新
 const getSnapshot = () => windowSizeObj; 
@@ -142,7 +142,7 @@ const getSnapshot = () => ({ ...windowSizeObj });
 
 ## 2. 避免订阅函数不稳定
 `subscribe` 若每次渲染都创建新函数，会导致 React 频繁取消旧订阅、创建新订阅，引发性能问题或状态丢失。  
-✅ 正确做法：用 `useCallback` 包裹 `subscribe`：
+正确做法：用 `useCallback` 包裹 `subscribe`：
 ```javascript
 // 错误：每次渲染都创建新的 subscribe 函数
 const subscribe = (callback) => { /* ... */ }; 
@@ -153,7 +153,7 @@ const subscribe = useCallback((callback) => { /* ... */ }, []);
 
 ## 3. 服务端渲染必须提供 `getServerSnapshot`
 若组件在服务端渲染（如 Next.js、Remix），未提供 `getServerSnapshot` 会导致 React 警告，且客户端水合时可能出现内容不匹配。  
-✅ 正确做法：根据服务端环境返回合理的初始值：
+正确做法：根据服务端环境返回合理的初始值：
 ```javascript
 const getServerSnapshot = () => {
   // 服务端无 window，返回默认尺寸

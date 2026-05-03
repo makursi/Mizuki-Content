@@ -13,12 +13,12 @@ lang: ''
 ---
 # useReducer
 
-hook的官方专业权威的**定义**内容展示区域
+
 `useReducer` 是 React 提供的一个用于状态管理的 Hook，它是 `useState` 的替代方案，适用于处理复杂的状态逻辑。其核心遵循 Redux 风格的 reducer 模式，接收一个形如 `(state, action) => newState` 的 reducer 函数和初始状态，返回当前状态以及一个派发（dispatch）动作的方法。从官方定义来看，它让组件的状态更新逻辑可以被抽离和复用，尤其适合多个状态操作之间存在关联、状态逻辑较复杂的场景。
 
 # useReducer的核心作用
 
-hook的官方专业权威**核心作用**的内容展示区域
+
 1. **复杂状态管理**：当组件的状态包含多个子值（如对象、数组），或状态更新逻辑需要根据不同条件执行复杂计算时，`useReducer` 能将状态更新逻辑集中到 reducer 函数中，让组件逻辑更清晰，避免在组件内写大量分散的 `setState` 逻辑。
 2. **状态逻辑复用**：可以将 reducer 函数抽离到组件外部，多个组件可复用相同的状态更新逻辑，提升代码复用性。
 3. **可预测的状态更新**：基于“action 驱动”的模式，状态更新的触发和逻辑分离，每一次状态变更都对应明确的 action，便于调试和追踪状态变化（结合 React DevTools 可清晰看到 action 派发记录）。
@@ -26,7 +26,7 @@ hook的官方专业权威**核心作用**的内容展示区域
 
 # useReducer的使用方法
 
-hook的官方专业权威**使用方法**的内容展示区域
+
 ### 基本语法
 ```javascript
 const [state, dispatch] = useReducer(reducer, initialArg, init?);
@@ -67,7 +67,7 @@ function Counter() {
 
 # useReducer的使用案例
 
-hook的官方专业权威**使用案例**的内容展示区域
+
 ### 案例1：基础计数器（对比 useState 更易扩展）
 ```javascript
 import { useReducer } from 'react';
@@ -188,7 +188,7 @@ export default LoginForm;
 
 # useReducer的使用注意事项
 
-hook的官方专业权威**注意事项**的内容展示区域
+
 1. **reducer 必须是纯函数**：
    - 不能在 reducer 中执行副作用（如请求数据、修改 DOM、调用非纯函数），仅能根据 `state` 和 `action` 返回新状态。
    - 不能直接修改原状态对象/数组（React 依赖不可变数据判断更新），需返回新的对象/数组（如用扩展运算符 `...`、`Array.map`/`Array.filter` 等）。

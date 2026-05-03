@@ -168,8 +168,8 @@ function UserProfile({ userId }) {
     </div>
   );
 }
-```
 
+```
 # 使用注意事项
 
 1. **依赖项必须完整**：

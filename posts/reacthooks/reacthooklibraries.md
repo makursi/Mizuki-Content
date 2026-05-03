@@ -14,7 +14,6 @@ lang: ''
 
 ## 一、ahooks（阿里开源，企业级通用 Hook 库）
 - **GitHub**：https://github.com/alibaba/hooks
-- **Star**：18k+
 - **核心亮点**
   - 国内首选，**中文文档完善**，阿里线上大规模验证。
   - 60+ 个常用 Hook，分类清晰（状态、副作用、DOM、传感器等）。
@@ -40,7 +39,6 @@ function User() {
 
 ## 二、react-use（经典全能型，生态最丰富）
 - **GitHub**：https://github.com/streamich/react-use
-- **Star**：35k+
 - **核心亮点**
   - 老牌库，**覆盖最广**（90+ Hook），浏览器 API 集成度高。
   - 分类：Browser、State、Element、Effect、Sensor、Lifecycle 等。
@@ -65,7 +63,6 @@ function App() {
 
 ## 三、@react-hookz/web（现代企业级，强类型+高性能）
 - **GitHub**：https://github.com/react-hookz/web
-- **Star**：4k+
 - **核心亮点**
   - 由 react-use 前维护者开发，**设计更现代、性能更优**。
   - 60+ Hook，**TS 优先**，类型定义精准，杜绝 `any`。
@@ -93,7 +90,6 @@ function Data() {
 
 ## 四、react-hook-form（表单专用，性能之王）
 - **GitHub**：https://github.com/react-hook-form/react-hook-form
-- **Star**：40k+
 - **核心亮点**
   - **表单管理首选**，极致性能（减少重渲染）、体积小（5KB）。
   - 内置校验、支持复杂表单、嵌套字段、表单数组。
@@ -124,7 +120,6 @@ function Login() {
 
 ## 五、@tanstack/react-query（服务端状态专用，数据请求之王）
 - **GitHub**：https://github.com/TanStack/query
-- **Star**：35k+
 - **核心亮点**
   - **服务端状态管理首选**，处理异步数据、缓存、同步、错误处理。
   - 自动缓存、自动重试、后台更新、乐观更新、分页/无限滚动支持。
