@@ -14,6 +14,6 @@ pinned: true
 
 <a href="/posts/cssmodules/">css modules</a>
 
-<a href="/posts/css-in-js/">css-in-js</a>
+<a href="/posts/cssinjs/">css-in-js</a>
 
 <a href="/posts/cssatom/">css原子化</a>
