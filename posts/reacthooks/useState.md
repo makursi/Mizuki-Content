@@ -13,7 +13,9 @@ lang: ''
 ---
 # useState
 
-useState 是 React 中最基础的 Hook，它允许函数组件拥有自己的状态（state），是 React 官方提供的用于在函数组件中管理局部状态的核心 Hook。在 React 16.8 引入 Hooks 之前，函数组件本身无法拥有状态，只能通过类组件的 `this.state` 和 `this.setState` 管理状态，useState 填补了这一空白。
+useState 是 React 中最基础的 Hook，它允许函数组件拥有自己的状态（state），是 React 官方提供的用于在函数组件中管理局部状态的核心 Hook。
+
+在 React 16.8 引入 Hooks 之前，函数组件本身无法拥有状态，只能通过类组件的 `this.state` 和 `this.setState` 管理状态，useState 填补了这一空白。
 
 # 核心作用
 

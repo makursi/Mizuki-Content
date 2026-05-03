@@ -31,15 +31,6 @@ tree-component-library/
     ├── index.html      # 演示页面
     └── index.tsx       # 演示入口
 ```
-创建命令示例（终端执行）：
-```bash
-mkdir -p tree-component-library/src/components/Tree
-mkdir -p tree-component-library/build tree-component-library/demo
-cd tree-component-library
-touch package.json tsconfig.json src/index.ts
-touch src/components/Tree/index.ts src/components/Tree/Tree.tsx src/components/Tree/Tree.types.ts
-touch demo/index.html demo/index.tsx
-```
 
 ### （二）使用依赖下载
 本项目基于React + TypeScript开发，需安装核心依赖和打包工具（以Vite为例，轻量化且高效）：

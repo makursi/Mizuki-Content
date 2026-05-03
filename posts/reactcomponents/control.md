@@ -13,7 +13,9 @@ lang: ''
 # 受控组件和非受控组件
 
 ## 受控组件的官方定义
-在 React 中，**受控组件（Controlled Component）** 是指表单元素的状态（value、checked 等）由 React 组件的 state 完全控制，表单元素的值只能通过更新 React 状态来修改。React 官方文档明确说明：受控组件将表单数据交由 React 状态管理，用户输入会触发状态更新，进而同步更新表单元素的值，形成“数据单向流动”的闭环。
+在 React 中，**受控组件（Controlled Component）** 是指表单元素的状态（value、checked 等）由 React 组件的 state 完全控制，表单元素的值只能通过更新 React 状态来修改。
+
+React 官方文档明确说明：受控组件将表单数据交由 React 状态管理，用户输入会触发状态更新，进而同步更新表单元素的值，形成“数据单向流动”的闭环。
 
 ## 非受控组件的官方定义
 **非受控组件（Uncontrolled Component）** 则是表单元素的状态由 DOM 自身管理，而非 React state。React 官方将其描述为：非受控组件更接近原生 HTML 表单的工作方式，通过 ref 直接从 DOM 节点中获取表单数据，而非通过状态绑定，数据的获取时机由开发者手动触发（如提交表单时）。

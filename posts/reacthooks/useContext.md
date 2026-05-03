@@ -13,7 +13,9 @@ lang: ''
 ---
 # useContext
 
-useContext 是 React 官方提供的一个 Hook，用于在函数组件中**便捷地访问 React Context 中的值**，无需通过层层传递 props 的方式来共享跨组件层级的数据。Context 设计的核心目的是为了共享那些对于一个组件树而言是“全局”的数据（如用户登录状态、主题配置、语言设置等），而 useContext 则让函数组件能以更简洁、更符合 Hook 风格的方式消费 Context，替代了类组件中 Context.Consumer 嵌套的写法。
+useContext 是 React 官方提供的一个 Hook，用于在函数组件中**便捷地访问 React Context 中的值**，无需通过层层传递 props 的方式来共享跨组件层级的数据。
+
+Context 设计的核心目的是为了共享那些对于一个组件树而言是“全局”的数据（如用户登录状态、主题配置、语言设置等），而 useContext 则让函数组件能以更简洁、更符合 Hook 风格的方式消费 Context，替代了类组件中 Context.Consumer 嵌套的写法。
 
 # useContext 的核心作用
 

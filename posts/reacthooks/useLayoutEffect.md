@@ -13,7 +13,9 @@ lang: ''
 ---
 # useLayoutEffect
 
-useLayoutEffect 是 React 提供的一个生命周期 Hook，它与 useEffect 的执行时机不同——**useLayoutEffect 会在所有 DOM 变更之后、浏览器绘制（paint）之前同步执行**，而 useEffect 是在浏览器完成绘制后异步执行。从官方定义来看，它的签名与 useEffect 完全一致，仅执行阶段存在差异：`useLayoutEffect(effect, deps?)`，其中 effect 是包含副作用逻辑的函数（可返回清理函数），deps 是依赖项数组。
+useLayoutEffect 是 React 提供的一个生命周期 Hook，它与 useEffect 的执行时机不同——**useLayoutEffect 会在所有 DOM 变更之后、浏览器绘制（paint）之前同步执行**，而 useEffect 是在浏览器完成绘制后异步执行。
+
+从官方定义来看，它的签名与 useEffect 完全一致，仅执行阶段存在差异：`useLayoutEffect(effect, deps?)`，其中 effect 是包含副作用逻辑的函数（可返回清理函数），deps 是依赖项数组。
 
 # useLayoutEffect 的核心作用
 

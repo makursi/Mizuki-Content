@@ -1,54 +1,60 @@
 ---
 title: React Hooks
 published: 2026-04-30
-description: ''
-image: ''
+description: ""
+image: ""
 tags: []
-category: 'React'
-draft: false 
-lang: ''
+category: "React"
+draft: false
+lang: ""
 ---
+
 ![Alt text](./react/reactcute.webp)
 
 # React hooks
 
 ## 数据驱动
-[useState](./reacthooks/useState.md)
 
-[useReducer](./reacthooks/useReducer.md)
+<a href="./reacthooks/useState.md">useState</a>
 
-[useImmer](./reacthooks/useImmer.md)
+<a href="./reacthooks/useReducer.md">useReducer</a>
 
-[useSyncExternalStore](./reacthooks/useSyncExternalStore.md)
+<a href="./reacthooks/useImmer.md">useImmer</a>
 
-[useTransition](./reacthooks/useTransition.md)
+<a href="./reacthooks/useSyncExternalStore.md">useSyncExternalStore</a>
 
-[useDeferredValue](./reacthooks/useDeferredValue.md)
+<a href="./reacthooks/useTransition.md">useTransition</a>
+
+<a href="./reacthooks/useDeferredValue.md">useDeferredValue</a>
 
 ## 副作用
-[useEffect](./reacthooks/useEffect.md)
 
-[useLayoutEffect](./reacthooks/useLayoutEffect.md)
+<a href="./reacthooks/useEffect.md">useEffect</a>
 
-[useInsertionEffect](./reacthooks/useInsertionEffect.md)
+<a href="./reacthooks/useLayoutEffect.md">useLayoutEffect</a>
+
+<a href="./reacthooks/useInsertionEffect.md">useInsertionEffect</a>
 
 ## 状态传递
-[useRef](./reacthooks/useRef.md)
 
-[useImperativeHandle](./reacthooks/useImperativeHandle.md)
+<a href="./reacthooks/useRef.md">useRef</a>
 
-[useContext](./reacthooks/useContext.md)
+<a href="./reacthooks/useImperativeHandle.md">useImperativeHandle</a>
+
+<a href="./reacthooks/useContext.md">useContext</a>
 
 ## 状态派生
-[useMemo](./reacthooks/useMemo.md)
 
-[useCallback](./reacthooks/useCallback.md)
+<a href="./reacthooks/useMemo.md">useMemo</a>
+
+<a href="./reacthooks/useCallback.md">useCallback</a>
 
 ## 工具Hooks
-[useDebugValue](./reacthooks/useDebugValue.md)
 
-[useId](./reacthooks/useId.md)
+<a href="./reacthooks/useDebugValue.md">useDebugValue</a>
+
+<a href="./reacthooks/useId.md">useId</a>
 
 ## 其他
 
-[自定义hook](./reacthooks/useCustom.md)
+<a href="./reacthooks/useCustom.md">自定义hook</a>

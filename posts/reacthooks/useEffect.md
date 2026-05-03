@@ -13,7 +13,9 @@ lang: ''
 ---
 # useEffect
 
-`useEffect` 是 React 提供的一个核心 Hook，用于在函数组件中执行**副作用操作**。副作用指那些不直接属于组件渲染流程的操作，比如数据获取、订阅/取消订阅、DOM 操作、手动修改状态等。它整合了类组件中 `componentDidMount`、`componentDidUpdate` 和 `componentWillUnmount` 三个生命周期方法的能力，让函数组件能够处理生命周期相关的逻辑。
+`useEffect` 是 React 提供的一个核心 Hook，用于在函数组件中执行**副作用操作**。副作用指那些不直接属于组件渲染流程的操作，比如数据获取、订阅/取消订阅、DOM 操作、手动修改状态等。
+
+它整合了类组件中 `componentDidMount`、`componentDidUpdate` 和 `componentWillUnmount` 三个生命周期方法的能力，让函数组件能够处理生命周期相关的逻辑。
 
 # 核心作用
 

@@ -13,7 +13,9 @@ lang: ''
 ---
 # useRef
 
-useRef 是 React 提供的一个 Hook，它能在组件的整个生命周期内保存一个可变的值，这个值的更新不会触发组件的重新渲染；同时它也可以用来获取 DOM 元素或 React 组件实例。从官方定义来看，useRef 返回一个可变的 ref 对象，其 `.current` 属性被初始化为传入的参数（initialValue），该 ref 对象在组件的整个生命周期内保持不变。
+useRef 是 React 提供的一个 Hook，它能在组件的整个生命周期内保存一个可变的值，这个值的更新不会触发组件的重新渲染；同时它也可以用来获取 DOM 元素或 React 组件实例。
+
+从官方定义来看，useRef 返回一个可变的 ref 对象，其 `.current` 属性被初始化为传入的参数（initialValue），该 ref 对象在组件的整个生命周期内保持不变。
 
 # useRef 的核心作用
 

@@ -13,7 +13,9 @@ lang: ''
 ---
 # useCallback
 
-useCallback 是 React 中的一个内置 Hook，它的核心设计目的是**缓存函数定义**，避免在组件重新渲染时不必要地创建新的函数实例。从官方定义来看，useCallback 会返回一个记忆化（memoized）的回调函数，该函数仅在其依赖项数组发生变化时才会更新。
+useCallback 是 React 中的一个内置 Hook，它的核心设计目的是**缓存函数定义**，避免在组件重新渲染时不必要地创建新的函数实例。
+
+从官方定义来看，useCallback 会返回一个记忆化（memoized）的回调函数，该函数仅在其依赖项数组发生变化时才会更新。
 
 # useCallback 的核心作用
 

@@ -13,7 +13,9 @@ lang: ''
 ---
 # useImmer
 
-`useImmer` 是 Immer 库为 React 提供的自定义 Hook，它基于 Immer 核心的 "可变式操作不可变数据" 理念，让开发者可以以直观的、可变的方式修改状态，同时底层自动生成不可变的新状态，无需手动解构或拼接对象/数组，大幅简化 React 中复杂状态的更新逻辑。Immer 本身是由 React 核心团队成员开发的库，`useImmer` 是其针对 React 状态管理场景的专属封装，兼容 React 函数组件的 Hook 规范，常作为 `useState` 的替代方案用于处理嵌套/复杂结构的状态。
+`useImmer` 是 Immer 库为 React 提供的自定义 Hook，它基于 Immer 核心的 "可变式操作不可变数据" 理念，让开发者可以以直观的、可变的方式修改状态，同时底层自动生成不可变的新状态，无需手动解构或拼接对象/数组，大幅简化 React 中复杂状态的更新逻辑。
+
+Immer 本身是由 React 核心团队成员开发的库，`useImmer` 是其针对 React 状态管理场景的专属封装，兼容 React 函数组件的 Hook 规范，常作为 `useState` 的替代方案用于处理嵌套/复杂结构的状态。
 
 # useImmer的核心作用
 
