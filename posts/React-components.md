@@ -7,6 +7,7 @@ tags: []
 category: "React"
 draft: false
 lang: ""
+pinned: true
 ---
 
 ![Alt text](./react/reactcute.webp)

@@ -6,7 +6,6 @@ image: ''
 tags: []
 category: 'AI'
 draft: false
-pinned: true
 lang: ''
 ---
 # 复刻Vercel类似的SaaS平台
