@@ -16,46 +16,46 @@ pinned: true
 
 ## 数据驱动
 
-<a href="/posts/hook-useState">useState</a>
+<a href="/posts/hook-usestate/">useState</a>
 
-<a href="/posts/hook-useReducer/">useReduce</a>
+<a href="/posts/hook-usereducer/">useReduce</a>
 
-<a href="/posts/hook-useImmer/">useImmer</a>
+<a href="/posts/hook-useimmer/">useImmer</a>
 
-<a href="/posts/hook-useSyncExternalStore/">useSyncExternalStore</a>
+<a href="/posts/hook-usesyncexternalstore/">useSyncExternalStore</a>
 
-<a href="/posts/hook-useTransition/">useTransition</a>
+<a href="/posts/hook-usetransition/">useTransition</a>
 
-<a href="/posts/hook-useDeferredValue/">useDeferredValue</a>
+<a href="/posts/hook-usedeferredvalue/">useDeferredValue</a>
 
 ## 副作用
 
-<a href="/posts/hook-useEffect/">useEffect</a>
+<a href="/posts/hook-useeffect/">useEffect</a>
 
-<a href="/posts/hook-useLayoutEffect/">useLayoutEffect</a>
+<a href="/posts/hook-uselayouteffect/">useLayoutEffect</a>
 
-<a href="/posts/hook-useInsertionEffect/">useInsertionEffect</a>
+<a href="/posts/hook-useinsertioneffect/">useInsertionEffect</a>
 
 ## 状态传递
 
-<a href="/posts/hook-useRef/">useRef</a>
+<a href="/posts/hook-useref/">useRef</a>
 
-<a href="/posts/hook-useImperativeHandle/">useImperativeHandle</a>
+<a href="/posts/hook-useimperativehandle/">useImperativeHandle</a>
 
-<a href="/posts/hook-useContext/">useContext</a>
+<a href="/posts/hook-usecontext/">useContext</a>
 
 ## 状态派生
 
-<a href="/posts/hook-useMemo/">useMemo</a>
+<a href="/posts/hook-usememo/">useMemo</a>
 
-<a href="/posts/hook-useCallBack/">useCallBack</a>
+<a href="/posts/hook-usecallBack/">useCallBack</a>
 
 ## 工具Hooks
 
-<a href="/posts/hook-useDebugValue/">useDebugValue </a>
+<a href="/posts/hook-usedebugvalue/">useDebugValue </a>
 
-<a href="/posts/hook-useId/">useId</a>
+<a href="/posts/hook-useid/">useId</a>
 
 ## 其他
 
-<a href="/posts/hook-useCustom/">自定义hook</a>
+<a href="/posts/hook-usecustom/">自定义hook</a>
