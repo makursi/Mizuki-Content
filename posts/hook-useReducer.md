@@ -16,7 +16,9 @@ lang: ''
 
 `useReducer` 是 React 提供的一个用于状态管理的 Hook，它是 `useState` 的替代方案，适用于处理复杂的状态逻辑。
 
-其核心遵循 Redux 风格的 reducer 模式，接收一个形如 `(state, action) => newState` 的 reducer 函数和初始状态，返回当前状态以及一个派发（dispatch）动作的方法。从官方定义来看，它让组件的状态更新逻辑可以被抽离和复用，尤其适合多个状态操作之间存在关联、状态逻辑较复杂的场景。
+其核心遵循 Redux 风格的 reducer 模式，接收一个形如 `(state, action) => newState` 的 reducer 函数和初始状态，返回当前状态以及一个派发（dispatch）动作的方法。
+
+从官方定义来看，它让组件的状态更新逻辑可以被抽离和复用，尤其适合多个状态操作之间存在关联、状态逻辑较复杂的场景。
 
 # useReducer的核心作用
 

@@ -13,7 +13,9 @@ lang: ''
 ---
 # useSyncExternalStore
 
-`useSyncExternalStore` 是 React 官方提供的一个内置 Hook，专门用于**安全地读取和订阅外部存储（External Store）** 的值，确保组件在外部存储更新时能够同步重新渲染，同时兼容 React 的并发渲染特性（如 Suspense、Transitions 等）。它是 React 18 新增的 API，解决了传统自定义订阅 Hook 在并发模式下可能出现的渲染不一致、撕裂（tearing）等问题。
+`useSyncExternalStore` 是 React 官方提供的一个内置 Hook，专门用于**安全地读取和订阅外部存储（External Store）** 的值，确保组件在外部存储更新时能够同步重新渲染，同时兼容 React 的并发渲染特性（如 Suspense、Transitions 等）。
+
+它是 React 18 新增的 API，解决了传统自定义订阅 Hook 在并发模式下可能出现的渲染不一致、撕裂（tearing）等问题。
 
 # 核心作用
 
