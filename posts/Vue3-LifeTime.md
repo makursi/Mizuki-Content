@@ -32,7 +32,7 @@ import HelloWorldVue from './components/HelloWorld.vue'
 </script>
 ```
 
-✅ 官方规范：
+官方规范：
 - `<script setup>` 中**import 后可直接用**，不用注册
 - 组件名**不能和 HTML 内置标签重名**（div、p、button 等）
 

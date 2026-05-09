@@ -55,7 +55,7 @@ Vue 用 Ref 包装，让原始类型也具备响应式
 
 用于自定义 ref，完全控制 get() 和 set() 逻辑。
 
-工厂函数结构
+工厂函数结构:
 
     customRef((track, trigger) => {
       return {

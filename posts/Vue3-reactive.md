@@ -9,12 +9,8 @@ draft: false
 lang: ''
 ---
 
-# 整篇文章内容：
-**reactive / shallowReactive / readonly / shallowReadonly**
-（Vue3 响应式核心的 **4 大基础 API）**
 
-我会讲清楚：
-**定义、源码原理、ECMA 标准、内部结构、为什么这样设计、区别、场景**
+**reactive / shallowReactive / readonly / shallowReadonly**
 
 ---
 
@@ -95,8 +91,8 @@ const person = reactive({
   friend: { name: 'ls' }
 })
 
-person.name = 'ww'          // ✅ 响应式
-person.friend.name = 'zl'   // ✅ 响应式（深度）
+person.name = 'ww'          // 响应式
+person.friend.name = 'zl'   // 响应式（深度）
 ```
 
 ## 特点
@@ -116,7 +112,7 @@ export function shallowReactive(target: object) {
   return createReactiveObject(
     target,
     false,
-    shallowHandlers, // ✨ 关键：浅处理函数
+    shallowHandlers, // 关键：浅处理函数
     shallowCollectionHandlers
   )
 }
@@ -137,8 +133,8 @@ const person = shallowReactive({
   friend: { name: 'ls' }
 })
 
-person.name = 'ww'        // ✅ 触发更新（第一层）
-person.friend.name = 'zl'// ❌ 不触发（深层不是Proxy）
+person.name = 'ww'        // 触发更新（第一层）
+person.friend.name = 'zl'// 不触发（深层不是Proxy）
 ```
 
 ## 作用
@@ -218,8 +214,8 @@ const state = shallowReadonly({
   friend: { name: 'ls' }
 })
 
-state.name = 'ww'         // ❌ 禁止
-state.friend.name = 'zl'  // ✅ 允许修改
+state.name = 'ww'         // 禁止
+state.friend.name = 'zl'  // 允许修改
 ```
 
 ---

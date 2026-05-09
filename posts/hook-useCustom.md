@@ -231,4 +231,4 @@ function ResponsiveComponent() {
 
 # 社区中一些优质的React hooks库
 
-[hooks库](reacthooklibraries.md)
+<a href="/posts/reacthooklibraries/">优质hooks库</a>

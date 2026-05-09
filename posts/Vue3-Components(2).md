@@ -498,7 +498,7 @@ button.active { background: #409eff; color: #fff; border:none; padding:4px 8px; 
 
 ---
 
-# 关键知识点
+# 注意事项
 
 ## 1. 为什么要用 `markRaw`
 - 组件本身是**静态构造函数/对象**，不需要响应式
