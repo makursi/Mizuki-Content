@@ -926,70 +926,80 @@ stateDiagram-v2
 
 以课程平台"用户完成课程获得积分"为例：
 
-```python
-# ══════ STEP 1: RED — 写一个失败的测试 ══════
-# test_points.py
-import pytest
-from points_service import PointsService, PointsRepository
+```typescript
+// ══════ STEP 1: RED — 写一个失败的测试 ══════
+// points_service.test.ts
+import { describe, it, expect } from "vitest";
+import { PointsService, PointsRepository } from "./points_service";
 
-class InMemoryPointsRepo(PointsRepository):
-    def __init__(self):
-        self._data = {}
-    def save(self, user_id: str, points: int):
-        self._data[user_id] = points
-    def get(self, user_id: str) -> int:
-        return self._data.get(user_id, 0)
+class InMemoryPointsRepo implements PointsRepository {
+  private data: Map<string, number> = new Map();
 
-def test_complete_lesson_adds_points():
-    """用户首次完成课程，应获得 10 积分"""
-    repo = InMemoryPointsRepo()
-    service = PointsService(repo)
+  save(userId: string, points: number): void {
+    this.data.set(userId, points);
+  }
 
-    service.complete_lesson(user_id="alice", lesson_id="math-01")
+  get(userId: string): number {
+    return this.data.get(userId) ?? 0;
+  }
+}
 
-    assert repo.get("alice") == 10
+it("用户首次完成课程，应获得 10 积分", () => {
+  const repo = new InMemoryPointsRepo();
+  const service = new PointsService(repo);
+
+  service.completeLesson({ userId: "alice", lessonId: "math-01" });
+
+  expect(repo.get("alice")).toBe(10);
+});
 ```
 
-```python
-# ══════ STEP 2: GREEN — 写最小代码使测试通过 ══════
-# points_service.py
-class PointsRepository:
-    def save(self, user_id: str, points: int): raise NotImplementedError
-    def get(self, user_id: str) -> int: raise NotImplementedError
+```typescript
+// ══════ STEP 2: GREEN — 写最小代码使测试通过 ══════
+// points_service.ts
+export interface PointsRepository {
+  save(userId: string, points: number): void;
+  get(userId: string): number;
+}
 
-class PointsService:
-    def __init__(self, repo: PointsRepository):
-        self._repo = repo
+export class PointsService {
+  constructor(private repo: PointsRepository) {}
 
-    def complete_lesson(self, user_id: str, lesson_id: str):
-        self._repo.save(user_id, 10)  # 最小实现：不做任何检查
+  completeLesson(opts: { userId: string; lessonId: string }): void {
+    this.repo.save(opts.userId, 10); // 最小实现：不做任何检查
+  }
+}
 ```
 
-```python
-# ══════ STEP 3: REFACTOR + 添加新测试 ══════
-# 添加：重复完成同一课程不能重复加分的测试
-def test_complete_same_lesson_twice_no_extra_points():
-    repo = InMemoryPointsRepo()
-    service = PointsService(repo)
+```typescript
+// ══════ STEP 3: REFACTOR + 添加新测试 ══════
+// 添加：重复完成同一课程不能重复加分的测试
+it("同一用户-课程对不重复计分（幂等性）", () => {
+  const repo = new InMemoryPointsRepo();
+  const service = new PointsService(repo);
 
-    service.complete_lesson(user_id="alice", lesson_id="math-01")
-    service.complete_lesson(user_id="alice", lesson_id="math-01")
+  service.completeLesson({ userId: "alice", lessonId: "math-01" });
+  service.completeLesson({ userId: "alice", lessonId: "math-01" });
 
-    assert repo.get("alice") == 10  # 仍然是 10，不是 20
+  expect(repo.get("alice")).toBe(10); // 仍然是 10，不是 20
+});
 
-# 重构实现：
-class PointsService:
-    def __init__(self, repo: PointsRepository):
-        self._repo = repo
-        self._completed: set[tuple[str, str]] = set()
+// 重构实现：
+export class PointsService {
+  private completed: Set<string> = new Set();
 
-    def complete_lesson(self, user_id: str, lesson_id: str):
-        key = (user_id, lesson_id)
-        if key in self._completed:
-            return  # 幂等：已完成的课程不重复加分
-        self._completed.add(key)
-        current = self._repo.get(user_id)
-        self._repo.save(user_id, current + 10)
+  constructor(private repo: PointsRepository) {}
+
+  completeLesson(opts: { userId: string; lessonId: string }): void {
+    const key = `${opts.userId}::${opts.lessonId}`;
+    if (this.completed.has(key)) {
+      return; // 幂等：已完成的课程不重复加分
+    }
+    this.completed.add(key);
+    const current = this.repo.get(opts.userId);
+    this.repo.save(opts.userId, current + 10);
+  }
+}
 ```
 
 #### 4.4.5 测试金字塔 (Test Pyramid)
@@ -1180,12 +1190,12 @@ Ousterhout 的 *A Philosophy of Software Design* 和 Robert C. Martin 的 *Clean
 ```text
 ┌─────────────────────────────────────────┐
 │  对外接口层面：Deep Modules 思维           │
-│  → 暴露尽可能少的概念，隐藏内部结构          │
+│  → 暴露尽可能少的概念，隐藏内部结构           │
 │  → 一个 package 只暴露 1-3 个关键类/函数    │
 ├─────────────────────────────────────────┤
 │  内部实现层面：Clean Code 思维             │
 │  → 在模块内部，使用小而清晰的私有函数         │
-│  → 保持内部代码的可读性和可测试性             │
+│  → 保持内部代码的可读性和可测试性            │
 └─────────────────────────────────────────┘
 ```
 
@@ -1414,55 +1424,74 @@ Phase 5: v₇ — E2E 测试 (AFK)
 
 #### 6.2.6 阶段 3: 实施 — TDD 示例（切片 v₁：积分计算）
 
-```python
-# ═══ Sub-Agent 1: 切片 v₁ — RED 阶段 ═══
-# Agent 首先根据 PRD 中的验收标准生成测试:
+```typescript
+// ═══ Sub-Agent 1: 切片 v₁ — RED 阶段 ═══
+// Agent 首先根据 PRD 中的验收标准生成测试:
 
-# test_points_service.py
-class TestPointsService:
-    def test_award_points_for_lesson_completion(self):
-        """Given 用户完成了一个未完成过的课程
-           When 系统处理该事件
-           Then 用户收到 10 积分"""
-        service = PointsService(FakeRepo())
-        service.complete_lesson("alice", "lesson-1")
-        assert service.get_points("alice") == 10
+// points_service.test.ts
+import { describe, it, expect } from "vitest";
+import { PointsService, PointsRepository } from "./points_service";
 
-    def test_no_double_award_for_same_lesson(self):
-        """同一用户-课程对不重复计分（幂等性）"""
-        service = PointsService(FakeRepo())
-        service.complete_lesson("alice", "lesson-1")
-        service.complete_lesson("alice", "lesson-1")
-        assert service.get_points("alice") == 10
+const makeRepo = (): PointsRepository => {
+  const data = new Map<string, number>();
+  return {
+    save: (userId, points) => data.set(userId, points),
+    get: (userId) => data.get(userId) ?? 0,
+  };
+};
 
-    def test_multiple_lessons_accumulate(self):
-        """不同课程积分累加"""
-        service = PointsService(FakeRepo())
-        service.complete_lesson("alice", "lesson-1")
-        service.complete_lesson("alice", "lesson-2")
-        assert service.get_points("alice") == 20
+describe("PointsService", () => {
+  it("用户完成未完成过的课程 → 收到 10 积分", () => {
+    const service = new PointsService(makeRepo());
+    service.completeLesson({ userId: "alice", lessonId: "lesson-1" });
+    expect(service.getPoints("alice")).toBe(10);
+  });
+
+  it("同一用户-课程对不重复计分（幂等性）", () => {
+    const service = new PointsService(makeRepo());
+    service.completeLesson({ userId: "alice", lessonId: "lesson-1" });
+    service.completeLesson({ userId: "alice", lessonId: "lesson-1" });
+    expect(service.getPoints("alice")).toBe(10);
+  });
+
+  it("不同课程积分累加", () => {
+    const service = new PointsService(makeRepo());
+    service.completeLesson({ userId: "alice", lessonId: "lesson-1" });
+    service.completeLesson({ userId: "alice", lessonId: "lesson-2" });
+    expect(service.getPoints("alice")).toBe(20);
+  });
+});
 ```
 
-```python
-# ═══ Sub-Agent 1: 切片 v₁ — GREEN 阶段 ═══
-# Agent 实现使测试通过的代码:
+```typescript
+// ═══ Sub-Agent 1: 切片 v₁ — GREEN 阶段 ═══
+// Agent 实现使测试通过的代码:
 
-# points_service.py
-class PointsService:
-    def __init__(self, repo: PointsRepository):
-        self._repo = repo
-        self._awarded: set[tuple[str, str]] = set()
+// points_service.ts
+export interface PointsRepository {
+  save(userId: string, points: number): void;
+  get(userId: string): number;
+}
 
-    def complete_lesson(self, user_id: str, lesson_id: str) -> None:
-        key = (user_id, lesson_id)
-        if key in self._awarded:
-            return  # 幂等守卫
-        self._awarded.add(key)
-        current = self._repo.get_points(user_id)
-        self._repo.save_points(user_id, current + 10)
+export class PointsService {
+  private awarded: Set<string> = new Set();
 
-    def get_points(self, user_id: str) -> int:
-        return self._repo.get_points(user_id)
+  constructor(private repo: PointsRepository) {}
+
+  completeLesson(opts: { userId: string; lessonId: string }): void {
+    const key = `${opts.userId}::${opts.lessonId}`;
+    if (this.awarded.has(key)) {
+      return; // 幂等守卫
+    }
+    this.awarded.add(key);
+    const current = this.repo.get(opts.userId);
+    this.repo.save(opts.userId, current + 10);
+  }
+
+  getPoints(userId: string): number {
+    return this.repo.get(userId);
+  }
+}
 ```
 
 #### 6.2.7 阶段 4: 评审
@@ -1573,81 +1602,5 @@ AI Code Review (新会话中):
 |------|---------|---------|
 | 四阶段工作流 | [§6.1](#61-matt-pocock-四阶段工作流总览) | 所有上述概念 |
 | 端到端案例 | [§6.2](#62-完整案例演示) | 所有上述概念 |
-
----
-
-## 9. 经典问题与练习 (Classic Problems & Exercises)
-
-**Q1**: 为什么厂商宣传的"百万 Token 上下文窗口"不等于"百万 Token 可用上下文"？
-
-<details>
-<summary>提示</summary>
-
-考虑注意力机制的 $O(n^2)$ 复杂度和位置编码在超长序列中的退化效应。参见 [§1.3 — Dumb Zone](#13-smart-zone-与-dumb-zone注意力衰减模型)。
-
-</details>
-
-**Q2**: 如果一个切片的实施消耗了 150K token 的上下文窗口，Agent 出现了"遗忘 PRD 验收标准"的现象，你会怎么做？
-
-<details>
-<summary>提示</summary>
-
-有两个方向：拆分切片（治本）或在实施中插入 `/clear` 并重新加载 PRD 摘要（治标）。参见 [§3.3 — Dumb Zone 驱动的切片粒度](#33-dumb-zone-驱动的切片粒度设计)。
-
-</details>
-
-**Q3**: Deep Modules 和 Clean Code 真的互相矛盾吗？在什么层面上它们可以共存？
-
-<details>
-<summary>提示</summary>
-
-考虑模块间 vs 模块内的不同关注层次。参见 [§5.2 — Deep Modules vs Clean Code](#52-deep-modules-vs-clean-code-对比)。
-
-</details>
-
-### 9.2 设计练习
-
-**Q4**: 你有一个包含以下任务的 DAG，请划分 Phase 并计算最大并行度：
-
-```text
-任务依赖:
-A → C, D
-B → D, E
-C → F
-D → F
-E → G
-F → H
-G → H
-```
-
-<details>
-<summary>答案</summary>
-
-Phase 1: A, B (并行度 2)
-Phase 2: C, D, E (并行度 3)
-Phase 3: F, G (并行度 2)
-Phase 4: H (并行度 1)
-
-最大并行度 = 3 (Phase 2)。参见 [§4.2 — DAG 与 Phase 编排](#42-依赖图-dag-与-phase-编排)。
-
-</details>
-
-**Q5**: 以下任务应该归类为 HITL 还是 AFK？说明理由。
-- (a) 设计一个新的数据库分区策略
-- (b) 为一个已有 API 端点增加请求参数验证
-- (c) 选择前端 UI 的颜色主题
-- (d) 编写一个数学工具函数及其单元测试
-
-<details>
-<summary>答案</summary>
-
-- (a) **HITL** — 不可逆架构决策，影响深远的性能和数据完整性
-- (b) **AFK** — 纯技术实现，有明确的输入/输出规范
-- (c) **HITL** — 审美判断，Agent 无 taste
-- (d) **AFK** — TDD 循环的自然场景，测试即验证
-
-参见 [§3.4 — HITL vs AFK](#34-kanban-与-hitlafk-任务分类)。
-
-</details>
 
 ---
