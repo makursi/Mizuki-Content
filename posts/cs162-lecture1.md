@@ -4,7 +4,7 @@ published: 2026-06-05
 description: ''
 image: ''
 tags: []
-category: ''
+category: 'OS'
 draft: false 
 lang: ''
 ---
