@@ -6,8 +6,8 @@ image: ''
 tags: []
 category: ''
 draft: false 
-pinned:true
 lang: ''
+pinned:true
 ---
 
 # Full Walkthrough: Workflow for AI Coding — Matt Pocock--演讲回顾
