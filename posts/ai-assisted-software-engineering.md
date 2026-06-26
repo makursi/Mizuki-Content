@@ -6,6 +6,7 @@ image: ''
 tags: []
 category: ''
 draft: false 
+pinned:true
 lang: ''
 ---
 
@@ -52,7 +53,7 @@ Github仓库:https://github.com/makursi/ai-enginer-workshop-2026
 9. [经典问题与练习 (Classic Problems & Exercises)](#9-经典问题与练习-classic-problems--exercises)
 ---
 
-## 概念关系图 (Concept Map)
+## 概念关系图
 
 ```mermaid
 flowchart TD
@@ -94,6 +95,10 @@ flowchart TD
     PAIR -->|反馈| PRD
     TDD -->|验证| VS
 ```
+
+
+# 使用步骤总结
+## 1. 使用真实的客户需求 -> 2. 使用/grill-me 逼问需求 -> 3. 使用/to-prd 写产品需求文档 -> 4. /to-issues 拆分任务 -> 5. /tdd 测试驱动开发 -> /diagnosing-bugs 调bug -> /import-codebase-architecture 做架构复习
 
 ---
 
