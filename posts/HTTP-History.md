@@ -1,6 +1,5 @@
 ---
-
-## title: HTTP 协议进化史：从 HTTP/0.9 到 HTTP/3
+title: HTTP 协议进化史：从 HTTP/0.9 到 HTTP/3
 published: 2026-04-05
 description: 一文看懂 HTTP 协议的发展历程：HTTP/0.9 单行协议、HTTP/1.x 标准化、SSL/TLS 与 HTTPS、REST 架构、HTTP/2 多路复用，以及基于 QUIC 的 HTTP/3。
 image: ''
@@ -9,6 +8,7 @@ category: 'HTTP协议'
 draft: false
 lang: zh-cn
 toc: true
+---
 
 > 本文整理自 MDN 官方文档《Evolution of HTTP》，梳理 HTTP 协议从诞生到 HTTP/3 的完整进化脉络。
 
